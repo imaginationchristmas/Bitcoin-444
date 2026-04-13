@@ -6,10 +6,6 @@
   <title>Bitcoin 444 Beginners</title>
   <meta name="description" content="Bitcoin 444 — a straightforward beginner's guide to understanding, buying, and securing Bitcoin. Bitcoin only. Mobile-first." />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Styles -->
   <link rel="stylesheet" href="./css/variables.css" />
@@ -60,11 +56,23 @@
           </div>
         </li>
         <li><a href="#dos-donts">Do's & Don'ts</a></li>
-        <li><a href="#exchanges" class="nav-cta">Get Started →</a></li>
       </ul>
-      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-controls">
+        <div class="btc-price" id="btcPrice" aria-label="Live Bitcoin price">
+          <span class="btc-price-label">₿</span>
+          <span class="btc-price-value" id="btcPriceValue">—</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme" role="switch" aria-checked="false">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+            <span class="toggle-icon-sun">☀</span>
+            <span class="toggle-icon-moon">☾</span>
+          </span>
+        </button>
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -93,9 +101,6 @@
       <a href="#wallets" onclick="closeMenu()">Multi-Sig</a>
     </details>
     <a href="#dos-donts" onclick="closeMenu()">Do's & Don'ts</a>
-    <div class="mobile-cta">
-      <a href="#exchanges" onclick="closeMenu()">Get Started →</a>
-    </div>
   </div>
 
   <main class="page-offset" id="home">
@@ -631,9 +636,9 @@
         </div>
 
         <div class="glass-card orange-glow reveal">
-          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.04em; margin-bottom: 0.75rem;">The 4-Year Rule</h3>
-          <p>“I’m going to buy at this price and sell it when I make a big enough profit” — don’t. You’ll pay capital gains taxes and you’ll probably sell too early. There has never been a point in Bitcoin’s history that it has not been higher 4 years later.</p>
-          <p class="mt-md" style="font-family: 'Space Mono', monospace; font-size: 0.82rem; color: var(--orange);">“It takes 4 years to see significant gains and 8 years to make life changing money.”</p>
+          <h3 style="font-family: var(--font-heading); font-weight: 600; font-size: 1.5rem; letter-spacing: 0.04em; margin-bottom: 0.75rem; text-transform: uppercase;">The 4-Year Rule</h3>
+          <p>"I'm going to buy at this price and sell it when I make a big enough profit" — don't. You'll pay capital gains taxes and you'll probably sell too early. There has never been a point in Bitcoin's history that it has not been higher 4 years later.</p>
+          <p class="mt-md" style="font-family: var(--font-mono); font-style: italic; font-size: 0.82rem; color: var(--orange);">"It takes 4 years to see significant gains and 8 years to make life changing money."</p>
           <p class="mt-md">Remember not everyone will get in at this price. Envy, jealousy, greed, and evil will rise with Bitcoin’s adoption, unfortunately. DON’T put a target on your back about any of this. Be smart with every move and intention.</p>
           <p class="mt-md"><strong>#1 Rule of BTC:</strong> don’t talk about how much you have (seed phrase security is #1 too).</p>
         </div>

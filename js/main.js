@@ -9,6 +9,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initDropdowns();
+  initThemeToggle();
+  initBtcPrice();
   initSectionTabs();
   initScrollSpy();
   initAccordions();
@@ -73,6 +75,8 @@ window.closeMenu = closeMobileMenu;
    DESKTOP DROPDOWNS
    ============================================================ */
 function initDropdowns() {
+  // Dropdowns are hover-only via CSS (:hover on li).
+  // This function only handles keyboard accessibility.
   const dropdownItems = document.querySelectorAll('.nav-links > li');
 
   dropdownItems.forEach(item => {
@@ -80,33 +84,7 @@ function initDropdowns() {
     const dropdown = item.querySelector('.dropdown');
     if (!btn || !dropdown) return;
 
-    // Click toggle (works for mouse and touch)
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = item.classList.contains('open');
-      // Close all others first
-      document.querySelectorAll('.nav-links > li.open').forEach(li => {
-        li.classList.remove('open');
-        const otherBtn = li.querySelector('.nav-btn');
-        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-      });
-      if (!isOpen) {
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      } else {
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Close dropdown when a link inside it is clicked
-    dropdown.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        item.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Keyboard support
+    // Keyboard: Enter/Space opens, Escape closes
     btn.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -121,17 +99,93 @@ function initDropdowns() {
       }
     });
   });
+}
 
-  // Close dropdowns on outside click
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-links')) {
-      document.querySelectorAll('.nav-links > li.open').forEach(li => {
-        li.classList.remove('open');
-        const btn = li.querySelector('.nav-btn');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
+/* ============================================================
+   THEME TOGGLE (Dark / Light)
+   ============================================================ */
+function initThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+
+  const root = document.documentElement;
+  const STORAGE_KEY = 'btc444-theme';
+
+  function syncAria() {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    btn.setAttribute('aria-checked', String(isLight));
+  }
+
+  // Restore saved preference
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === 'light') root.setAttribute('data-theme', 'light');
+  syncAria();
+
+  btn.addEventListener('click', () => {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      root.removeAttribute('data-theme');
+      localStorage.setItem(STORAGE_KEY, 'dark');
+    } else {
+      root.setAttribute('data-theme', 'light');
+      localStorage.setItem(STORAGE_KEY, 'light');
     }
+    syncAria();
   });
+}
+
+/* ============================================================
+   LIVE BTC PRICE
+   ============================================================ */
+function initBtcPrice() {
+  const el = document.getElementById('btcPriceValue');
+  if (!el) return;
+
+  const CACHE_KEY = 'btc444-price';
+  const CACHE_TTL = 60 * 1000; // 1 minute
+
+  function formatPrice(n) {
+    return '$' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function setPrice(val) {
+    el.textContent = formatPrice(val);
+  }
+
+  async function fetchPrice() {
+    try {
+      const res = await fetch(
+        'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
+        { cache: 'no-store' }
+      );
+      if (!res.ok) throw new Error('fetch failed');
+      const data = await res.json();
+      const price = data?.bitcoin?.usd;
+      if (!price) throw new Error('no price');
+      setPrice(price);
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ price, ts: Date.now() }));
+    } catch {
+      // On error, try cached value
+      try {
+        const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
+        if (cached.price) setPrice(cached.price);
+      } catch { /* silent */ }
+    }
+  }
+
+  // Try cache first for instant display
+  try {
+    const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
+    if (cached.price && Date.now() - cached.ts < CACHE_TTL) {
+      setPrice(cached.price);
+    }
+  } catch { /* silent */ }
+
+  // Fetch fresh price
+  fetchPrice();
+
+  // Refresh every 60 seconds
+  setInterval(fetchPrice, 60 * 1000);
 }
 
 /* ============================================================
@@ -259,16 +313,28 @@ function initWalletTabs() {
    ============================================================ */
 function initExchangeToggles() {
   const toggles = document.querySelectorAll('.exchange-toggle');
+  const allCards = document.querySelectorAll('.exchange-card');
 
   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const card = toggle.closest('.exchange-card');
       if (!card) return;
-      card.classList.toggle('open');
 
-      const label = card.classList.contains('open') ? 'Show less' : 'Show more details';
-      const labelEl = toggle.querySelector('.toggle-label');
-      if (labelEl) labelEl.textContent = label;
+      const isOpen = card.classList.contains('open');
+
+      // Close all cards first (accordion: only one open at a time)
+      allCards.forEach(c => {
+        c.classList.remove('open');
+        const lbl = c.querySelector('.toggle-label');
+        if (lbl) lbl.textContent = 'Show more details';
+      });
+
+      // If it wasn't open, open it now
+      if (!isOpen) {
+        card.classList.add('open');
+        const labelEl = toggle.querySelector('.toggle-label');
+        if (labelEl) labelEl.textContent = 'Show less';
+      }
     });
   });
 }

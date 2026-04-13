@@ -2,7 +2,48 @@
    BITCOIN 444 — CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ============================================================ */
 
+/* ── Local Fonts ── */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../assets/fonts/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  /* ── Font Families ── */
+  --font-body:    'IBM Plex Mono', monospace;
+  --font-heading: 'IBM Plex Mono', monospace;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  /* ── Type Scale (Swiss 1.25 modular) ── */
+  --text-xs:   0.8rem;    /* 12.8px — micro labels */
+  --text-sm:   0.9rem;    /* 14.4px — captions, tags */
+  --text-base: 1rem;      /* 16px   — body */
+  --text-lg:   1.25rem;   /* 20px   — lead text */
+  --text-xl:   1.563rem;  /* 25px   — h4 */
+  --text-2xl:  1.953rem;  /* 31px   — h3 */
+  --text-3xl:  2.441rem;  /* 39px   — h2 */
+  --text-4xl:  3.052rem;  /* 49px   — h1 small */
+  --text-hero: clamp(3rem, 8vw, 6rem); /* hero h1 */
+
   /* ── Brand Colors ── */
   --orange:            #F7931A;
   --orange-light:      #ffa833;
@@ -92,4 +133,61 @@
   --shadow-card:       0 4px 24px rgba(0, 0, 0, 0.3);
   --shadow-orange:     0 8px 30px var(--orange-glow);
   --shadow-dropdown:   0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(247, 147, 26, 0.08);
+
+  /* ── Dropdown ── */
+  --dropdown-bg:       rgba(14, 14, 20, 0.97);
+}
+
+/* ── Light Mode Overrides ── */
+[data-theme="light"] {
+  /* Darker warm parchment — more contrast */
+  --bg:                #ddd8cf;
+  --bg-elevated:       #d4cfc5;
+
+  --surface:           rgba(0, 0, 0, 0.06);
+  --surface-hover:     rgba(0, 0, 0, 0.10);
+
+  /* More opaque glass so cards are clearly visible */
+  --glass:             rgba(255, 255, 255, 0.55);
+  --glass-hover:       rgba(255, 255, 255, 0.70);
+  --glass-border:      rgba(0, 0, 0, 0.18);
+  --glass-border-orange: rgba(247, 147, 26, 0.50);
+
+  /* Dark text for readability */
+  --text:              #1a1610;
+  --text-dim:          rgba(26, 22, 16, 0.65);
+  --text-faint:        rgba(26, 22, 16, 0.40);
+
+  /* Orange dim — darker so orange text is readable on it */
+  --orange-dim:        rgba(247, 147, 26, 0.22);
+
+  /* Dropdown — light opaque background */
+  --dropdown-bg:       rgba(232, 227, 218, 0.98);
+
+  --tab-knowledge:     rgba(74, 144, 217, 0.12);
+  --tab-knowledge-border: rgba(74, 144, 217, 0.35);
+  --tab-knowledge-active: rgba(74, 144, 217, 0.22);
+
+  --tab-stack:         rgba(76, 175, 80, 0.12);
+  --tab-stack-border:  rgba(76, 175, 80, 0.35);
+  --tab-stack-active:  rgba(76, 175, 80, 0.22);
+
+  --tab-custody:       rgba(156, 39, 176, 0.12);
+  --tab-custody-border: rgba(156, 39, 176, 0.35);
+  --tab-custody-active: rgba(156, 39, 176, 0.22);
+
+  --tab-rules:         rgba(233, 30, 99, 0.12);
+  --tab-rules-border:  rgba(233, 30, 99, 0.35);
+  --tab-rules-active:  rgba(233, 30, 99, 0.22);
+
+  --tab-resources:     rgba(247, 147, 26, 0.12);
+  --tab-resources-border: rgba(247, 147, 26, 0.35);
+  --tab-resources-active: rgba(247, 147, 26, 0.22);
+
+  --green-dim:         rgba(76, 175, 80, 0.15);
+  --red-dim:           rgba(244, 67, 54, 0.15);
+
+  --shadow-card:       0 4px 24px rgba(0, 0, 0, 0.12);
+  --shadow-orange:     0 8px 30px rgba(247, 147, 26, 0.25);
+  --shadow-dropdown:   0 20px 60px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(247, 147, 26, 0.12);
 }

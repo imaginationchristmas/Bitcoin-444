@@ -19,8 +19,9 @@
 
 /* ── Eyebrow Label ── */
 .hero-eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: var(--text-xs);
   letter-spacing: 0.22em;
   color: var(--orange);
   text-transform: uppercase;
@@ -41,12 +42,14 @@
 
 /* ── Main Heading ── */
 .hero h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(4rem, 10vw, 8rem);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--text-hero);
+  line-height: 0.95;
+  letter-spacing: 0.06em;
   margin-bottom: 1.5rem;
   color: var(--text);
+  text-transform: uppercase;
 }
 
 .hero h1 .accent {
@@ -55,11 +58,13 @@
 
 /* ── Subtitle ── */
 .hero-sub {
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
   color: var(--text-dim);
   margin-bottom: 2.5rem;
   max-width: 520px;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 /* ── Stats Bar ── */
@@ -73,19 +78,22 @@
 }
 
 .hero-stat .num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 2rem;
   color: var(--orange);
   line-height: 1;
+  letter-spacing: 0.04em;
 }
 
 .hero-stat .label {
-  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-style: italic;
+  font-size: var(--text-xs);
   color: var(--text-faint);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 0.2rem;
-  font-family: 'Space Mono', monospace;
+  margin-top: 0.25rem;
 }
 
 /* ── Background BTC Symbol ── */
@@ -96,7 +104,8 @@
   transform: translateY(-50%);
   font-size: clamp(8rem, 22vw, 20rem);
   opacity: 0.035;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-heading);
+  font-weight: 600;
   color: var(--orange);
   pointer-events: none;
   user-select: none;
@@ -115,10 +124,11 @@
   align-items: center;
   gap: 0.4rem;
   color: var(--text-faint);
-  font-size: 0.68rem;
+  font-size: var(--text-xs);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
+  font-style: italic;
   z-index: 2;
 }
 
