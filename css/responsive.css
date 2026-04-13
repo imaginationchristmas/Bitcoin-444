@@ -1,0 +1,208 @@
+/* ============================================================
+   BITCOIN 444 — RESPONSIVE (Mobile-First Media Queries)
+   ============================================================ */
+
+/* ── Base: Mobile First ── */
+/* All base styles are written for mobile.
+   These queries enhance for larger screens. */
+
+/* ── Small Mobile (< 400px) ── */
+@media (max-width: 400px) {
+  :root {
+    --container-pad: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    padding: 0.75rem 1.4rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-stats {
+    gap: 1rem;
+  }
+
+  .hero-stat .num {
+    font-size: 1.6rem;
+  }
+}
+
+/* ── Mobile (< 640px) ── */
+@media (max-width: 640px) {
+  /* Nav */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  /* Grids → single column */
+  .facts-grid,
+  .resources-grid,
+  .seed-facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wallet-list {
+    grid-template-columns: 1fr;
+  }
+
+  .multisig-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scarcity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero — center content on mobile */
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
+  }
+
+  .hero-eyebrow::before {
+    display: none;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .btn-group {
+    justify-content: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  /* Do's and Don'ts */
+  .dos-donts {
+    grid-template-columns: 1fr;
+  }
+
+  /* Exchange card header stays horizontal on mobile */
+  .exchange-card-header {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  /* Big quote */
+  .big-quote p {
+    font-size: 1.5rem;
+  }
+
+  /* Accordion */
+  .accordion-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .accordion-body {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  .footer-tip {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Buttons */
+  .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* ── Tablet (641px – 768px) ── */
+@media (min-width: 641px) and (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scarcity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Tablet Landscape / Small Desktop (769px+) ── */
+@media (min-width: 769px) {
+  .nav-links { display: flex; }
+  .hamburger { display: none; }
+  .mobile-menu { display: none !important; }
+
+  .facts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* ── Desktop (> 1024px) ── */
+@media (min-width: 1025px) {
+  .facts-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Touch Device Optimizations ── */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase tap targets */
+  .wallet-tab {
+    min-height: 52px;
+    padding: 0.75rem 1.3rem;
+  }
+
+  /* Remove hover transforms on touch */
+  .glass-card:hover,
+  .exchange-card:hover,
+  .fact-card:hover {
+    transform: none;
+  }
+
+  /* Dropdown: don't use hover on touch — rely on click handler in JS */
+  .nav-links li:hover .dropdown {
+    display: none;
+  }
+}
+
+/* ── Print ── */
+@media print {
+  nav,
+  .hamburger,
+  .mobile-menu {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+}

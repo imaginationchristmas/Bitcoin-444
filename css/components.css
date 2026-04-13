@@ -1,0 +1,454 @@
+/* ============================================================
+   BITCOIN 444 — COMPONENTS (Buttons, Tabs, Accordions, Callouts)
+   ============================================================ */
+
+/* ── Buttons ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--orange);
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--orange-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--glass);
+  color: var(--text);
+  font-size: 0.9rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  border: 1px solid var(--glass-border);
+  transition: background var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.btn-ghost:hover {
+  background: var(--surface-hover);
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Wallet Tabs ── */
+.wallet-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--glass-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.wallet-tabs::-webkit-scrollbar { display: none; }
+
+.wallet-tab {
+  padding: 0.7rem 1.3rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+  min-height: 48px;
+  margin-bottom: -1px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wallet-tab:hover {
+  color: var(--text);
+}
+
+.wallet-tab.active {
+  color: var(--orange);
+  border-bottom-color: var(--orange);
+}
+
+.wallet-panel {
+  display: none;
+}
+
+.wallet-panel.active {
+  display: block;
+}
+
+/* ── Accordion (Step Cards) ── */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.accordion-item {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.accordion-item:hover {
+  border-color: var(--glass-border-orange);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.75rem;
+  cursor: pointer;
+  user-select: none;
+  min-height: 72px;
+}
+
+.accordion-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  color: var(--orange);
+  opacity: 0.3;
+  line-height: 1;
+  min-width: 48px;
+  transition: opacity var(--transition-base);
+}
+
+.accordion-title-wrap h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.accordion-title-wrap p {
+  font-size: 0.83rem;
+  color: var(--text-dim);
+  margin-top: 0.2rem;
+}
+
+.accordion-toggle {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.accordion-body {
+  display: none;
+  padding: 0 1.75rem 1.75rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.accordion-body-inner {
+  padding-top: 1.5rem;
+}
+
+.accordion-item.open .accordion-body {
+  display: block;
+}
+
+.accordion-item.open .accordion-toggle {
+  background: var(--orange-dim);
+  border-color: var(--orange);
+  color: var(--orange);
+  transform: rotate(45deg);
+}
+
+.accordion-item.open .accordion-num {
+  opacity: 0.65;
+}
+
+/* ── Pro Tip Callout ── */
+.pro-tip {
+  background: rgba(247, 147, 26, 0.06);
+  border-left: 3px solid var(--orange);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.pro-tip strong {
+  color: var(--orange);
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-family: 'Space Mono', monospace;
+  font-weight: 400;
+}
+
+/* ── Warning / Alert Box ── */
+.alert-box {
+  background: rgba(247, 147, 26, 0.08);
+  border: 1px solid var(--glass-border-orange);
+  border-radius: var(--radius);
+  padding: var(--space-xl);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.alert-box .alert-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.alert-box h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--orange);
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0;
+}
+
+.alert-box p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* ── Warning Banner (inline) ── */
+.warning-banner {
+  background: rgba(247, 147, 26, 0.05);
+  border: 1px solid var(--glass-border-orange);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ── Big Quote Block ── */
+.big-quote {
+  text-align: center;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.big-quote::before {
+  content: '"';
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 8rem;
+  color: var(--orange);
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.big-quote p {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.15;
+}
+
+.big-quote cite {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.12em;
+  font-style: normal;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ── Do's and Don'ts ── */
+.dos-donts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.dos,
+.donts {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+}
+
+.dos { border-top: 3px solid var(--green); }
+.donts { border-top: 3px solid var(--red); }
+
+.dos h3,
+.donts h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.dos h3 { color: var(--green); }
+.donts h3 { color: var(--red); }
+
+.dos ul,
+.donts ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.dos li,
+.donts li {
+  font-size: 0.87rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.dos li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 500;
+}
+
+.donts li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* ── Resource Category ── */
+.resource-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-category h3 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  font-weight: 400;
+}
+
+/* Full-width span for documentary */
+.resource-category--full {
+  grid-column: 1 / -1;
+}
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+/* ── Inline List ── */
+.inline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inline-list li {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.inline-list li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: 0.5rem;
+  top: 0.45em;
+}
+
+/* ── Gift Card Tags ── */
+.gift-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.gift-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.65rem;
+}

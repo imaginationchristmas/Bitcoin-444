@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitcoin 444 Beginners</title>
+  <meta name="description" content="Bitcoin 444 — a straightforward beginner's guide to understanding, buying, and securing Bitcoin. Bitcoin only. Mobile-first." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/layout.css" />
+  <link rel="stylesheet" href="./css/nav.css" />
+  <link rel="stylesheet" href="./css/hero.css" />
+  <link rel="stylesheet" href="./css/cards.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/sections.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav aria-label="Primary">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Bitcoin 444 Home">₿<span class="logo-text">444</span></a>
+      <ul class="nav-links" role="menubar">
+        <li><a href="#why-bitcoin">Why Bitcoin</a></li>
+        <li>
+          <button class="nav-btn" aria-haspopup="true" aria-expanded="false">Learn <span class="chevron">▾</span></button>
+          <div class="dropdown" role="menu">
+            <a href="#facts">Key Facts</a>
+            <a href="#scarcity">Scarcity Math</a>
+            <a href="#resources">Books & Podcasts</a>
+          </div>
+        </li>
+        <li>
+          <button class="nav-btn" aria-haspopup="true" aria-expanded="false">Stack Sats <span class="chevron">▾</span></button>
+          <div class="dropdown" role="menu">
+            <a href="#exchanges">All Exchanges</a>
+            <a href="#swan">Swan Bitcoin</a>
+            <a href="#river">River</a>
+            <a href="#strike">Strike</a>
+            <a href="#fold">Fold</a>
+          </div>
+        </li>
+        <li>
+          <button class="nav-btn" aria-haspopup="true" aria-expanded="false">Self Custody <span class="chevron">▾</span></button>
+          <div class="dropdown" role="menu">
+            <a href="#seed-phrase">Seed Phrase</a>
+            <a href="#wallets">Hot Wallets</a>
+            <a href="#wallets">Cold Storage</a>
+            <a href="#wallets">Multi-Sig</a>
+          </div>
+        </li>
+        <li><a href="#dos-donts">Do's & Don'ts</a></li>
+        <li><a href="#exchanges" class="nav-cta">Get Started →</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu" role="navigation">
+    <a href="#why-bitcoin" onclick="closeMenu()">Why Bitcoin</a>
+    <details>
+      <summary>Learn</summary>
+      <a href="#facts" onclick="closeMenu()">Key Facts</a>
+      <a href="#scarcity" onclick="closeMenu()">Scarcity Math</a>
+      <a href="#resources" onclick="closeMenu()">Books & Podcasts</a>
+    </details>
+    <details>
+      <summary>Stack Sats</summary>
+      <a href="#exchanges" onclick="closeMenu()">All Exchanges</a>
+      <a href="#exchanges" onclick="closeMenu()">Swan Bitcoin</a>
+      <a href="#exchanges" onclick="closeMenu()">River</a>
+      <a href="#exchanges" onclick="closeMenu()">Strike</a>
+      <a href="#exchanges" onclick="closeMenu()">Fold</a>
+    </details>
+    <details>
+      <summary>Self Custody</summary>
+      <a href="#seed-phrase" onclick="closeMenu()">Seed Phrase</a>
+      <a href="#wallets" onclick="closeMenu()">Hot Wallets</a>
+      <a href="#wallets" onclick="closeMenu()">Cold Storage</a>
+      <a href="#wallets" onclick="closeMenu()">Multi-Sig</a>
+    </details>
+    <a href="#dos-donts" onclick="closeMenu()">Do's & Don'ts</a>
+    <div class="mobile-cta">
+      <a href="#exchanges" onclick="closeMenu()">Get Started →</a>
+    </div>
+  </div>
+
+  <main class="page-offset" id="home">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-eyebrow">Bitcoin 444 Beginners Guide</div>
+          <h1 id="hero-title">GET <span class="accent">OFF</span><br />ZERO.</h1>
+          <p class="hero-sub">The straightforward guide to understanding, buying, and securing Bitcoin — written by someone who actually gives a damn about your financial future.</p>
+          <div class="btn-group">
+            <a href="#why-bitcoin" class="btn-primary">Start Here ↓</a>
+            <a href="#exchanges" class="btn-ghost">Buy Your First Sats</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="num">21M</div>
+              <div class="label">Max BTC Supply</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">100M</div>
+              <div class="label">Sats per Bitcoin</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">4 YRS</div>
+              <div class="label">Always Higher After</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">24/7</div>
+              <div class="label">Global Access</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="container">
+      <div class="big-quote">
+        <p>It might make sense just to get some in case it catches on.</p>
+        <cite>— SATOSHI NAKAMOTO, CREATOR OF BITCOIN</cite>
+      </div>
+    </div>
+
+    <!-- STEP 1: WHY BITCOIN -->
+    <section id="why-bitcoin" data-tab="knowledge">
+      <div class="container">
+        <div class="section-label">Step 1</div>
+        <h2>Knowledge is Power</h2>
+        <p class="section-intro">Before you spend a single dollar, understand what you're getting into. This is Bitcoin only.</p>
+
+        <div class="glass-card orange-glow mb-lg reveal">
+          <p>
+            The initial knowledge and understanding of Bitcoin is the first and biggest obstacle. Set up an account and buy just $20 and do some research so you can start understanding everything. You are not going to “get it” in one convo or video.
+          </p>
+          <p class="mt-md">
+            If you have any questions or need help just let me know. I’ll walk you through it. Hell I’ll even go to you in person 1 on 1 and help you if scheduling allows it. But only if you are serious about this and can say that you are “orange pilled.”
+          </p>
+          <p class="mt-md">
+            This is your stepping stone to actually knowing what Bitcoin is. If all you’ve done was basically reading the headlines and listening to CNBC, Bloomberg, or social media, then a lot of it was just what that source wanted you to think about BTC.
+          </p>
+        </div>
+
+        <div class="warning-banner mb-2xl reveal">
+          ⚠️ <strong>Bitcoin only.</strong> I’m not going to go into detail about the other cryptos. My advice is to sell them or swap/convert them into BTC. Over 99.9% of them are literal scams, pump n dumps, etc. It’s the same, if not worse, as penny stocks in the stock market. If you want to do a blind gamble and throw some money at them, go ahead you degenerate. High chance you’re gonna get fucked over. No smart money/institutional money takes them serious.
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FACTS -->
+    <section id="facts" class="section-tight" data-tab="knowledge">
+      <div class="container">
+        <div class="section-label">The Fundamentals</div>
+        <h2>Why Bitcoin is Different</h2>
+        <p class="section-intro">Here are some big fun facts about BTC that should push anyone towards Bitcoin. Feel free to dive deeper and really take the orange pill.</p>
+
+        <div class="facts-grid reveal-group">
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">₿</div>
+              <div class="fact-text">
+                <strong>100 Million Satoshis</strong>
+              </div>
+            </div>
+            <p class="fact-body">1 Bitcoin = 100 million Satoshis (Sats). Think of it like pennies in a dollar — you'll mostly interact with Bitcoin in fractional Sat form.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">📦</div>
+              <div class="fact-text">
+                <strong>Fixed Supply: 21 Million</strong>
+              </div>
+            </div>
+            <p class="fact-body">Only 21 million Bitcoin will ever exist. Hard-coded into the protocol. No one can print more — not governments, not Satoshi, not anyone.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🔗</div>
+              <div class="fact-text">
+                <strong>Peer-to-Peer</strong>
+              </div>
+            </div>
+            <p class="fact-body">Send money directly to anyone on earth without a bank, payment processor, or government in the middle. It's your money — no approval needed.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🏅</div>
+              <div class="fact-text">
+                <strong>Better Than Gold</strong>
+              </div>
+            </div>
+            <p class="fact-body">Bitcoin has all the properties of gold — scarce, durable, divisible — but it's also portable, verifiable, and can be sent across the world in minutes.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🌐</div>
+              <div class="fact-text">
+                <strong>Decentralized</strong>
+              </div>
+            </div>
+            <p class="fact-body">No single company, country, or person controls Bitcoin. It runs on thousands of nodes worldwide. There's no CEO to call, no server to shut down.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">📈</div>
+              <div class="fact-text">
+                <strong>4-Year Track Record</strong>
+              </div>
+            </div>
+            <p class="fact-body">Pick any date in Bitcoin's history. Come back 4 years later. The price has been higher every single time. No other asset has that track record.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">📉</div>
+              <div class="fact-text">
+                <strong>Everything Gets Cheaper in BTC</strong>
+              </div>
+            </div>
+            <p class="fact-body">A house that cost 1,000 BTC in 2011 costs a fraction of a Bitcoin today. Priced in Bitcoin, everything gets cheaper over time. That's the opposite of inflation.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🌍</div>
+              <div class="fact-text">
+                <strong>No Borders</strong>
+              </div>
+            </div>
+            <p class="fact-body">Send Bitcoin to anyone, anywhere, any time — 24/7/365. No wire fees, no business hours, no "your transaction is under review." It just works.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCARCITY -->
+    <section id="scarcity" data-tab="knowledge">
+      <div class="container">
+        <div class="section-label">The Math</div>
+        <h2>Scarcity by the Numbers</h2>
+        <p class="section-intro">21 million Bitcoin. 8 billion people. Run the math and it gets interesting fast.</p>
+
+        <div class="scarcity-grid reveal-group">
+          <div class="scarcity-card reveal">
+            <div class="scarcity-num">0.002625</div>
+            <div class="scarcity-label"><strong>BTC per person</strong> if distributed equally among all 8 billion people</div>
+            <div class="scarcity-sub">= 262,500 sats (~$315)</div>
+          </div>
+          <div class="scarcity-card reveal">
+            <div class="scarcity-num">0.2625</div>
+            <div class="scarcity-label"><strong>BTC needed</strong> to be in the top 1% of Bitcoin holders globally</div>
+            <div class="scarcity-sub">Only 80 million people can be in the top 1%</div>
+          </div>
+          <div class="scarcity-card reveal">
+            <div class="scarcity-num">58M</div>
+            <div class="scarcity-label"><strong>Millionaires worldwide</strong> — none of them could each hold even 0.5 BTC if they tried</div>
+            <div class="scarcity-sub">There isn't enough to go around</div>
+          </div>
+          <div class="scarcity-card reveal">
+            <div class="scarcity-num">∞</div>
+            <div class="scarcity-label"><strong>Fiat money printed</strong> — governments keep printing, making your dollars worth less every year</div>
+            <div class="scarcity-sub">Why does everything cost more? This.</div>
+          </div>
+        </div>
+
+        <div class="glass-card mt-lg reveal">
+          <p>None of this is factoring in people who already have over any of those thresholds, nor is it adding in all of the entities, companies, organizations, governments, or coins that are considered to be lost. This scarce supply component of Bitcoin is one of the reasons why you’re starting to see companies and even governments acquiring it. It’s also why the price goes up when you compare it to fiat currencies.</p>
+          <p class="mt-md"><strong>Hint:</strong> Fiat/government issued currencies will always lose value. Why do you think the price of anything goes up? The government keeps printing more money.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: EXCHANGES -->
+    <section id="exchanges" data-tab="stack">
+      <div class="container">
+        <div class="section-label">Step 2</div>
+        <h2>Start Stacking Some Sats</h2>
+        <p class="section-intro">There are more exchanges and intermediaries where you can buy Bitcoin, not all of them are created equal. These are Bitcoin-only exchanges and in my opinion are superior to the rest.</p>
+
+        <div class="exchanges-grid">
+          <!-- Swan -->
+          <div class="exchange-card reveal" id="swan">
+            <div class="exchange-card-header">
+              <div class="exchange-card-logo">
+                <div class="exchange-logo-icon">
+                  <img src="assets/images/swan.jpg" alt="Swan Bitcoin logo" class="exchange-logo-img" />
+                </div>
+                <div>
+                  <div class="exchange-name">Swan Bitcoin</div>
+                  <span class="exchange-tag">Best for DCA</span>
+                </div>
+              </div>
+            </div>
+            <div class="exchange-card-body">
+              <p class="exchange-desc">Swan is a good place to start stacking Bitcoin both in the short term and long term. With a 1% fee to buy, Swan is a top place to DCA (dollar cost average).</p>
+              <div class="exchange-fee">Buy fee: <span>1%</span> &nbsp;|&nbsp; Vault: <span>$30/mo</span> under $150K &nbsp;|&nbsp; IRA: <span>0.02%/mo</span></div>
+              <a href="https://www.swanbitcoin.com/toddbeam" target="_blank" rel="noopener" class="exchange-link">Sign up → Get $10 in BTC ↗</a>
+            </div>
+            <button class="exchange-toggle" type="button">
+              <span class="toggle-label">Show more details</span>
+              <span class="toggle-icon">▾</span>
+            </button>
+            <div class="exchange-details">
+              <p><strong>Swan Vault</strong> is their multisig and inheritance planning solution — best for those with $50K+ in BTC. It's a 2-of-3 multisig: you hold 2 keys, Swan holds 1 as a backup. Slightly more secure than a traditional hardware wallet and includes inheritance planning.</p>
+              <p><strong>Vault fees:</strong> Up to $150K in BTC — $30/month. Above $150K — 0.02%/month.</p>
+              <p><strong>Swan Bitcoin IRA:</strong> Transfer or rollover an eligible Roth or traditional IRA and hold Bitcoin instead of the traditional index fund options. Partnered with Equity Trust, which holds over $52 billion in assets under custody. IRA fees: 0.02%/month with a $20 minimum + 1% buy/sell transaction fee.</p>
+              <p>Swan posts valuable info and tips on social media, produced the God Bless Bitcoin documentary, and actively encourages self custody. They're one of the most Bitcoiner-aligned exchanges out there.</p>
+            </div>
+          </div>
+
+          <!-- River -->
+          <div class="exchange-card reveal" id="river">
+            <div class="exchange-card-header">
+              <div class="exchange-card-logo">
+                <div class="exchange-logo-icon">
+                  <img src="assets/images/river.jpg" alt="River logo" class="exchange-logo-img" />
+                </div>
+                <div>
+                  <div class="exchange-name">River</div>
+                  <span class="exchange-tag">Proof of Reserves</span>
+                </div>
+              </div>
+            </div>
+            <div class="exchange-card-body">
+              <p class="exchange-desc">River is a fantastic place to get your Bitcoin journey started. They offer buying and selling, sending, earning interest, incorporating your business, and proof of reserves.</p>
+              <div class="exchange-fee">One-time buy: <span>1%</span> &nbsp;|&nbsp; Recurring: <span>fee waived</span> after week 1</div>
+              <a href="https://river.com/signup?r=5A6X6EPURI" target="_blank" rel="noopener" class="exchange-link">Join River → Earn up to $100 in BTC ↗</a>
+            </div>
+            <button class="exchange-toggle" type="button">
+              <span class="toggle-label">Show more details</span>
+              <span class="toggle-icon">▾</span>
+            </button>
+            <div class="exchange-details">
+              <p>With recurring buys, that 1% fee is waived after the first week. River allows you to send your Bitcoin to a different address — you should get used to doing this regularly.</p>
+              <p>If you deposit cash you can earn interest paid directly in BTC (currently 3.3%) — no need to convert later.</p>
+              <p>You can also add your business to River with ease, giving your company access to all the same options as the personal side. Wouldn't you like to strengthen the value of your company with the power of Bitcoin?</p>
+              <p>River updates their proof of reserves every month to show they hold more Bitcoin as assets than liabilities. Your traditional bank only holds a fraction of their reserves at any time — if too many people try to withdraw at once, they can't cover it. River can.</p>
+            </div>
+          </div>
+
+          <!-- Strike -->
+          <div class="exchange-card reveal" id="strike">
+            <div class="exchange-card-header">
+              <div class="exchange-card-logo">
+                <div class="exchange-logo-icon">
+                  <img src="assets/images/strike.jpg" alt="Strike logo" class="exchange-logo-img" />
+                </div>
+                <div>
+                  <div class="exchange-name">Strike</div>
+                  <span class="exchange-tag">Lightning Network</span>
+                </div>
+              </div>
+            </div>
+            <div class="exchange-card-body">
+              <p class="exchange-desc">Strike is a great place to buy, sell, send, shop with lightning, or even get a loan. Their in house lightning account lets you zap sats instantly with a lightning address.</p>
+              <div class="exchange-fee">Max buy/sell fee: <span>1%</span> &nbsp;|&nbsp; Lightning: <span>instant & low fee</span></div>
+              <p class="disclaimer">***Disclaimer*** There is a lot of risk and considerations involving Bitcoin backed loans. This is when you are farther down your Bitcoin path. Talk to your lawyer and financial advisor — I’m just some fucking guy making this guide for you.</p>
+              <a href="https://invite.strike.me/O3SWAM" target="_blank" rel="noopener" class="exchange-link">Sign up → First $500 fee-free ↗</a>
+            </div>
+            <button class="exchange-toggle" type="button">
+              <span class="toggle-label">Show more details</span>
+              <span class="toggle-icon">▾</span>
+            </button>
+            <div class="exchange-details">
+              <p><strong>Lightning Network (Layer 2):</strong> Strike's in-house lightning account lets you zap sats instantly to anyone with a lightning address. Think of Lightning as quick everyday purchases — like buying a coffee. The mainchain (Layer 1 / Base Layer) is for larger, longer-term transfers. Start with a few sats to get the feel of better money.</p>
+              <p><strong>Gift cards:</strong> Shop with lightning right from the Strike app — buy digital and physical gift cards across dozens of categories.</p>
+              <p><strong>Bitcoin-backed loan:</strong> 12-month loan starting at $10,000 with 50% LTV and 9–12.5% rates. Wouldn't it be nice to get cash without selling your Bitcoin? That said — there's a lot of risk involved. This is for when you're further down your Bitcoin path. Talk to your lawyer and financial advisor. I'm just some fucking guy making this guide for you.</p>
+            </div>
+          </div>
+
+          <!-- Fold -->
+          <div class="exchange-card reveal" id="fold">
+            <div class="exchange-card-header">
+              <div class="exchange-card-logo">
+                <div class="exchange-logo-icon">
+                  <img src="assets/images/fold.jpg" alt="Fold logo" class="exchange-logo-img" />
+                </div>
+                <div>
+                  <div class="exchange-name">Fold</div>
+                  <span class="exchange-tag">Best for Beginners</span>
+                </div>
+              </div>
+            </div>
+            <div class="exchange-card-body">
+              <p class="exchange-desc">Fold might be the best place to start getting exposure to BTC especially for no coiners. Buy BTC, earn BTC rewards on gift cards, debit card, daily spin for free sats, and referral bonuses.</p>
+              <div class="exchange-fee">Basic: <span>Free</span> &nbsp;|&nbsp; Fold Plus: <span>$10/mo</span> &nbsp;|&nbsp; Credit card: <span>1.5% back in BTC</span></div>
+              <a href="https://use.foldapp.com/r/9PKFNEJK" target="_blank" rel="noopener" class="exchange-link">Sign up → Get $10 in Sats ↗</a>
+            </div>
+            <button class="exchange-toggle" type="button">
+              <span class="toggle-label">Show more details</span>
+              <span class="toggle-icon">▾</span>
+            </button>
+            <div class="exchange-details">
+              <p><strong>Fold Basic (free):</strong> debit card, gift cards, buying/sending BTC, daily spin, referral bonus.</p>
+              <p><strong>Fold Plus ($10/mo or $100/yr):</strong> same debit card and features, but more percentage back and no BTC buy fees. When you sign up for the debit card, Fold typically gives you a 1–3 month free trial of Fold Plus.</p>
+              <p>Their gift card section is a great way to stack sats and get your friends into Bitcoin. Let's face it — you're gonna spend the money on these things anyway. You might as well get some BTC back as a little bonus. All those little sats start to add up. The daily spin and referral bonus are the cherry on top.</p>
+              <p><strong>Gift card categories:</strong></p>
+              <div class="gift-tags">
+                <span class="gift-tag">Amazon</span>
+                <span class="gift-tag">Gas</span>
+                <span class="gift-tag">Groceries</span>
+                <span class="gift-tag">Bitcoin products</span>
+                <span class="gift-tag">Auto</span>
+                <span class="gift-tag">Beauty/Clothing</span>
+                <span class="gift-tag">Dining</span>
+                <span class="gift-tag">Electronics/Gaming</span>
+                <span class="gift-tag">Entertainment</span>
+                <span class="gift-tag">Home Improvement</span>
+                <span class="gift-tag">Pets</span>
+                <span class="gift-tag">Sports & Outdoors</span>
+                <span class="gift-tag">Travel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3: SELF CUSTODY -->
+    <section id="seed-phrase" data-tab="custody">
+      <div class="container">
+        <div class="section-label">Step 3</div>
+        <h2>Take Custody of Your Bitcoin</h2>
+        <p class="section-intro">Now in order to actually own your Bitcoin you need to be in control of those keys. It’s the same for anything financial related. Remember the Canadian truckers?</p>
+
+        <div class="alert-box mb-lg reveal">
+          <div class="alert-icon">🔑</div>
+          <div>
+            <h3>Seed Phrase Knowledge</h3>
+            <p>Whenever you start/generate a new wallet, it will give you a 12 or 24 word seed phrase. The wallet generates it randomly and is only shown fully once. This is essentially your Bitcoin. If someone gets access to your seed phrase, they can wipe your entire wallet and be gone forever.</p>
+          </div>
+        </div>
+
+        <div class="seed-facts-grid reveal-group">
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">✍️</div>
+              <div class="fact-text">
+                <strong>Write It Down</strong>
+              </div>
+            </div>
+            <p class="fact-body">Take your time. Write all words in order, spelled correctly. Store it in a weather-protected home safe. Laminating it adds another layer of protection.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🔒</div>
+              <div class="fact-text">
+                <strong>Never Digital</strong>
+              </div>
+            </div>
+            <p class="fact-body">Do NOT take a photo of it, type it into any app, or store it anywhere online. Ever. If it touches the internet, assume it's compromised.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🤐</div>
+              <div class="fact-text">
+                <strong>Tell Nobody</strong>
+              </div>
+            </div>
+            <p class="fact-body">Your seed phrase is more sacred than your SSN. Don't share it with anyone — ever. And don't tell people how much Bitcoin you have. Not even family.</p>
+          </div>
+          <div class="fact-card reveal">
+            <div class="fact-card-top">
+              <div class="fact-icon">🔨</div>
+              <div class="fact-text">
+                <strong>Stamp It in Metal</strong>
+              </div>
+            </div>
+            <p class="fact-body">Stamp your seed phrase into a metal plate for fire and flood resistance. <a class="orange" href="https://www.stampseed.com/" target="_blank" rel="noopener">stampseed.com ↗</a> is a solid option.</p>
+          </div>
+        </div>
+
+        <div class="pro-tip reveal">
+          <strong>💡 Pro Tip</strong>
+          When setting up a new wallet: write down your seed phrase → wipe the wallet → restore it with your seed phrase → confirm it works → THEN add Bitcoin. This verifies you wrote it down properly before any funds are at risk.
+        </div>
+
+        <div class="glass-card mt-lg reveal">
+          <p>There’s stories of people who got into Bitcoin in the pioneer days and lost the seed phrase. Don’t be a cheapass or dumbass and lose access to generational wealth.</p>
+          <p class="mt-md">Start off with a little bit when sending so you get the hang of it. Eventually you’ll build up the confidence and knowledge to start slinging BTC like a MF BOSS.</p>
+          <p class="mt-md">Look into UTXO management only when you get the basics down.</p>
+          <p class="mt-md">Link of a presentation by a fellow Bitcoiner to help you secure your Bitcoin — <strong>21 Tips to Securing your Bitcoin</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WALLETS -->
+    <section id="wallets" class="section-tight" data-tab="custody">
+      <div class="container">
+        <div class="section-label">Wallet Types</div>
+        <h2>Choosing Your Wallet</h2>
+        <p class="section-intro">There are two types of wallets — a hot wallet and a cold wallet. Where you store depends on how much you have and how long you plan to hold.</p>
+
+        <div class="wallet-tabs" role="tablist">
+          <button class="wallet-tab active" data-tab="hot" role="tab" aria-selected="true">🔥 Hot Wallets</button>
+          <button class="wallet-tab" data-tab="cold" role="tab" aria-selected="false">🧊 Cold Storage</button>
+          <button class="wallet-tab" data-tab="multisig" role="tab" aria-selected="false">🔐 Multi-Sig</button>
+        </div>
+
+        <div class="wallet-panel active" id="tab-hot" role="tabpanel">
+          <div class="glass-card mb-lg">
+            <p>A <strong>hot wallet</strong> is connected to the internet — convenient for quick access and small daily transactions (similar to Venmo, Cash App, PayPal). A hot wallet is a good stepping stone if you are not ready to make the leap to a cold storage wallet.</p>
+          </div>
+          <div class="wallet-list">
+            <div class="wallet-item">
+              <h4>Strike</h4>
+              <p>Built-in Lightning wallet — great for small, fast payments. Also where you buy sats.</p>
+            </div>
+            <div class="wallet-item">
+              <h4>Blue Wallet</h4>
+              <p>Open-source, Bitcoin and Lightning support. Simple interface, widely respected.</p>
+            </div>
+            <div class="wallet-item">
+              <h4>Muun Wallet</h4>
+              <p>Beginner-friendly wallet with seamless Lightning support. Easy to get started.</p>
+            </div>
+            <div class="wallet-item">
+              <h4>Aqua Wallet</h4>
+              <p>Mobile-first option designed for ease of use with Lightning and on-chain support.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wallet-panel" id="tab-cold" role="tabpanel">
+          <div class="glass-card mb-lg">
+            <p>A <strong>cold storage wallet</strong> is completely offline — the modern day’s version of a gold vault. Since it’s not online it’s almost impossible for hackers to get into it. Not for everyday use — act like it’s your life savings.</p>
+            <p class="mt-md orange"><strong>***Important***</strong> Always buy directly from the company directly, never from a reseller.</p>
+          </div>
+          <div class="wallet-list">
+            <div class="wallet-item">
+              <h4>Passport by Foundation</h4>
+              <p>Bitcoin-only hardware wallet with optional onboarding support.</p>
+              <a href="https://foundation.xyz/passport-core/" target="_blank" rel="noopener">foundation.xyz ↗</a>
+            </div>
+            <div class="wallet-item">
+              <h4>Bitkey</h4>
+              <p>A friendly intro wallet — easy enough for your kids.</p>
+              <a href="https://bitkey.world/" target="_blank" rel="noopener">bitkey.world ↗</a>
+            </div>
+            <div class="wallet-item">
+              <h4>Blockstream Jade Plus</h4>
+              <p>Open-source, air-gapped option with QR signing capability.</p>
+              <a href="https://blockstream.com/jade/" target="_blank" rel="noopener">blockstream.com ↗</a>
+            </div>
+            <div class="wallet-item">
+              <h4>Coldcard MK4 / Q</h4>
+              <p>Bitcoin-only, air-gapped, advanced security features.</p>
+              <a href="https://coldcard.com/" target="_blank" rel="noopener">coldcard.com ↗</a>
+            </div>
+          </div>
+          <div class="pro-tip mt-lg">
+            <strong>💡 Spread Your Sats</strong>
+            Try a few — personal preference matters. BTC Sessions on YouTube has great walkthroughs for each device.
+          </div>
+        </div>
+
+        <div class="wallet-panel" id="tab-multisig" role="tabpanel">
+          <div class="glass-card mb-lg">
+            <p>A <strong>multi sig wallet</strong> needs 2 of 3 keys to sign a transaction — like a Bitcoin vault. More secure and protects you if you lose a key or get physically attacked. Most good services require $50,000 in BTC to open the account.</p>
+          </div>
+          <div class="multisig-grid">
+            <div class="multisig-item">
+              <h4>Casa</h4>
+              <p>Premium multi-sig with estate planning and concierge recovery.</p>
+              <a href="https://casa.io/" target="_blank" rel="noopener">casa.io ↗</a>
+            </div>
+            <div class="multisig-item">
+              <h4>Swan Vault</h4>
+              <p>2-of-3 multi-sig with inheritance planning.</p>
+              <a href="https://www.swanbitcoin.com/vault/" target="_blank" rel="noopener">swanbitcoin.com ↗</a>
+            </div>
+            <div class="multisig-item">
+              <h4>Unchained</h4>
+              <p>Collaborative custody with key recovery and IRA options.</p>
+              <a href="https://www.unchained.com/" target="_blank" rel="noopener">unchained.com ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DO'S & DON'TS -->
+    <section id="dos-donts" data-tab="rules">
+      <div class="container">
+        <div class="section-label">Rules of the Road</div>
+        <h2>Do's & Don'ts</h2>
+        <p class="section-intro">You’re gonna have a ton of questions after this. Not all of this will make sense yet — that is normal.</p>
+
+        <div class="dos-donts mb-lg">
+          <div class="dos">
+            <h3>✓ Do This</h3>
+            <ul class="inline-list">
+              <li>Get some and educate yourself and your inner circle</li>
+              <li>DCA — don’t try to time the market</li>
+              <li>Take self custody of your Bitcoin</li>
+              <li>Start small when learning to send BTC</li>
+              <li>Spread holdings across multiple wallets</li>
+              <li>Learn about the $5 wrench attack and practice security</li>
+              <li>HODL — hold long term</li>
+            </ul>
+          </div>
+          <div class="donts">
+            <h3>✗ Don't Do This</h3>
+            <ul class="inline-list">
+              <li>Talk about how much Bitcoin you have</li>
+              <li>Share your seed phrase with ANYONE</li>
+              <li>Try to trade in and out for quick profits</li>
+              <li>Photograph or digitally store your seed phrase</li>
+              <li>Buy other cryptocurrencies (they're mostly scams)</li>
+              <li>Sell your Bitcoin — institutional money is buying, not selling</li>
+              <li>Put a target on your back bragging about your stack</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="glass-card orange-glow reveal">
+          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.04em; margin-bottom: 0.75rem;">The 4-Year Rule</h3>
+          <p>“I’m going to buy at this price and sell it when I make a big enough profit” — don’t. You’ll pay capital gains taxes and you’ll probably sell too early. There has never been a point in Bitcoin’s history that it has not been higher 4 years later.</p>
+          <p class="mt-md" style="font-family: 'Space Mono', monospace; font-size: 0.82rem; color: var(--orange);">“It takes 4 years to see significant gains and 8 years to make life changing money.”</p>
+          <p class="mt-md">Remember not everyone will get in at this price. Envy, jealousy, greed, and evil will rise with Bitcoin’s adoption, unfortunately. DON’T put a target on your back about any of this. Be smart with every move and intention.</p>
+          <p class="mt-md"><strong>#1 Rule of BTC:</strong> don’t talk about how much you have (seed phrase security is #1 too).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources" data-tab="resources">
+      <div class="container">
+        <div class="section-label">Education</div>
+        <h2>Rabbit Hole Resources</h2>
+        <p class="section-intro">Start here — it’s the easiest place to start. God Bless Bitcoin is the doc to watch for anyone getting involved.</p>
+
+        <div class="resources-grid">
+          <!-- Books -->
+          <div class="resource-category glass-card">
+            <h3>📚 Books</h3>
+            <div class="resource-list">
+              <a href="https://www.amazon.com/Bitcoin-Everything-divided-21-million/dp/9916697191" target="_blank" rel="noopener" class="resource-item">
+                <strong>Everything Divided by 21 Million</strong>
+                <span>Short and easy read — it's not going to go over your head.</span>
+              </a>
+              <a href="https://www.amazon.com/dp/1119473861/?bestFormat=true&k=the%20bitcoin%20standard&ref_=nb_sb_ss_w_scx-ent-pd-bk-d_de_k0_1_12&crid=3VLFFPSGGZAYI&sprefix=the%20bitcoin%20" target="_blank" rel="noopener" class="resource-item">
+                <strong>The Bitcoin Standard</strong>
+                <span>OG bitcoiner. Austrian economics. Deep history.</span>
+              </a>
+              <a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener" class="resource-item">
+                <strong>The Bitcoin Whitepaper</strong>
+                <span>The original 9-page document that started it all.</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Podcasts + YouTube -->
+          <div class="resource-category glass-card">
+            <h3>🎙️ Podcasts &amp; YouTube</h3>
+            <div class="resource-list">
+              <a href="https://fountain.fm/" target="_blank" rel="noopener" class="resource-item">
+                <strong>Fountain App</strong>
+                <span>Free podcast player with a ton of Bitcoin content — earn sats while you listen.</span>
+              </a>
+              <a href="https://www.youtube.com/c/simplybitcoin" target="_blank" rel="noopener" class="resource-item">
+                <strong>Simply Bitcoin Podcast</strong>
+                <span>Daily podcast talking about the current news surrounding BTC.</span>
+              </a>
+              <a href="https://saifedean.com/podcast" target="_blank" rel="noopener" class="resource-item">
+                <strong>The Bitcoin Standard Podcast</strong>
+                <span>Same author as the book, over 280 episodes.</span>
+              </a>
+              <a href="https://www.youtube.com/@nataliebrunell" target="_blank" rel="noopener" class="resource-item">
+                <strong>Coin Stories by Natalie Brunell</strong>
+                <span>Guest interviews and BTC news — she's in the God Bless Bitcoin doc too.</span>
+              </a>
+              <a href="https://www.youtube.com/@BTCSessions" target="_blank" rel="noopener" class="resource-item">
+                <strong>BTC Sessions (YouTube)</strong>
+                <span>Step-by-step tutorials on everything from buying sats to setting up hardware wallets.</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Documentary — spans both columns -->
+          <div class="resource-category glass-card resource-category--full">
+            <h3>🎬 Documentary — Start Here</h3>
+            <div class="resource-list">
+              <a href="https://www.youtube.com/watch?v=oksraL7wN6Q&t=37s" target="_blank" rel="noopener" class="resource-item featured">
+                <strong>God Bless Bitcoin</strong>
+                <span>Produced by Swan Bitcoin. Easy enough for a middle schooler. This is the one to watch first.</span>
+              </a>
+              <div class="video-embed mt-md">
+                <iframe
+                  src="https://www.youtube.com/embed/oksraL7wN6Q?start=37"
+                  title="God Bless Bitcoin — Documentary"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card mt-lg reveal">
+          <p>💡 You can also find a lot of information on Bitcoin Twitter. Make sure that it’s Bitcoin only material otherwise you’ll get fed so much of the shitcoins.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section id="conclusion" data-tab="resources">
+      <div class="container">
+        <div class="big-quote">
+          <p>Bitcoin is too big, too decentralized to be stopped. So you might as well get some and enjoy the roller coaster.</p>
+          <cite>— BITCOIN 444 BEGINNERS GUIDE</cite>
+        </div>
+
+        <div class="glass-card orange-glow conclusion-cta reveal">
+          <p>Now you have the basics to get your Bitcoin journey underway. For some this is all you’ll need for a while. It’s fine if you want to go the simple route and hodl your Bitcoin. (Yes it’s spelt wrong)</p>
+          <p>Other people will desire to know more about this new and superior financial system. There’s plenty of resources out there if you are wanting to know more. In some way shape or form everyone finds themselves contributing in some manner even if just within your small circle.</p>
+          <p class="mt-md">There’s a saying “You can lead a horse to water but you can’t make it drink” so if you refuse to adapt to innovation so be it. <strong>Have fun staying poor.</strong></p>
+          <div class="btn-group" style="justify-content: center; margin-top: 1.5rem;">
+            <a href="#exchanges" class="btn-primary">Buy Your First Sats ↗</a>
+            <a href="#resources" class="btn-ghost">Keep Learning</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">₿itcoin 444 Beginners</div>
+          <p>I don’t intend to make any money off of this. I want to make this purely out of helping others to get off zero and onto a Bitcoin Standard.</p>
+          <p class="footer-disclaimer">I’m just some fucking guy making this guide for you. Talk to your lawyer and financial advisor before making major financial decisions.</p>
+        </div>
+        <div class="footer-tip">
+          <h4>☕ Tip the Author</h4>
+          <p class="tip-option">💸 Venmo: <a href="https://venmo.com/u/Todd-Beam" target="_blank" rel="noopener">@Todd-Beam</a></p>
+          <p class="tip-option">⚡ Strike Lightning: <a href="mailto:todd444@strike.me">todd444@strike.me</a></p>
+          <p class="tip-note">If you found this helpful, a few sats go a long way 🙏</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Bitcoin 444 Beginners · Not financial advice · DYOR</p>
+        <div class="ticker">TICK TOCK NEXT BLOCK ₿</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

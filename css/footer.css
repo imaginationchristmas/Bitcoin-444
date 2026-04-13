@@ -1,0 +1,135 @@
+/* ============================================================
+   BITCOIN 444 — FOOTER
+   ============================================================ */
+
+footer {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--glass-border);
+  padding: 3rem 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Brand ── */
+.footer-brand {
+  max-width: 340px;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--orange);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.footer-brand p {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.footer-brand .footer-disclaimer {
+  margin-top: 0.75rem;
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* ── Tip Jar ── */
+.footer-tip {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  min-width: 240px;
+}
+
+.footer-tip h4 {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 0.85rem;
+  font-weight: 400;
+}
+
+.tip-option {
+  font-size: 0.84rem;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.tip-option a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.tip-option a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.tip-note {
+  font-size: 0.74rem;
+  color: var(--text-faint);
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* ── Footer Bottom Bar ── */
+.footer-bottom {
+  border-top: 1px solid var(--glass-border);
+  padding-top: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+
+.ticker {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+  .footer-inner {
+    flex-direction: column;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-tip {
+    width: 100%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

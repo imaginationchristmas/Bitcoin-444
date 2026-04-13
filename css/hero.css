@@ -1,0 +1,143 @@
+/* ============================================================
+   BITCOIN 444 — HERO SECTION
+   ============================================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-total) + 2rem) 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Eyebrow Label ── */
+.hero-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+/* ── Main Heading ── */
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.hero h1 .accent {
+  color: var(--orange);
+}
+
+/* ── Subtitle ── */
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-dim);
+  margin-bottom: 2.5rem;
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+/* ── Stats Bar ── */
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3.5rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.hero-stat .num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.hero-stat .label {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+  font-family: 'Space Mono', monospace;
+}
+
+/* ── Background BTC Symbol ── */
+.hero-visual {
+  position: absolute;
+  right: -5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(8rem, 22vw, 20rem);
+  opacity: 0.035;
+  font-family: 'Bebas Neue', sans-serif;
+  color: var(--orange);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+  z-index: 0;
+}
+
+/* ── Scroll Indicator ── */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-faint);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-family: 'Space Mono', monospace;
+  z-index: 2;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(to bottom, var(--orange), transparent);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(1.1); }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero-visual { display: none; }
+  .hero-stats { gap: 1.25rem; }
+  .hero-stat .num { font-size: 1.8rem; }
+  .scroll-indicator { display: none; }
+}

@@ -1,0 +1,430 @@
+/* ============================================================
+   BITCOIN 444 — CARDS (Glass, Fact, Exchange, Wallet, Resource)
+   ============================================================ */
+
+/* ── Base Glass Card ── */
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: var(--space-xl);
+  backdrop-filter: var(--blur-sm);
+  -webkit-backdrop-filter: var(--blur-sm);
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.glass-card:hover {
+  border-color: var(--glass-border-orange);
+  transform: translateY(-2px);
+}
+
+.glass-card.orange-glow {
+  box-shadow: 0 0 40px rgba(247, 147, 26, 0.1);
+  border-color: var(--glass-border-orange);
+}
+
+.glass-card.orange-tint {
+  background: rgba(247, 147, 26, 0.05);
+  border-color: var(--glass-border-orange);
+}
+
+/* ── Fact Card ── */
+.fact-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color var(--transition-base), background var(--transition-base);
+}
+
+.fact-card:hover {
+  border-color: var(--glass-border-orange);
+  background: var(--surface-hover);
+}
+
+.fact-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.fact-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--orange-dim);
+  border: 1px solid var(--glass-border-orange);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.fact-text {
+  flex: 1;
+}
+
+.fact-text strong {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.fact-body {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-top: var(--space-sm);
+  flex: 1;
+}
+
+/* ── Exchange Card ── */
+.exchange-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.exchange-card:hover {
+  border-color: var(--glass-border-orange);
+}
+
+.exchange-card-header {
+  padding: 1.5rem 1.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.exchange-card-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Name + tag inline row */
+.exchange-card-logo > div {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.exchange-logo-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--orange-dim);
+  border: 1px solid var(--glass-border-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  overflow: hidden;
+}
+
+.exchange-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: calc(var(--radius-sm) - 1px);
+}
+
+.exchange-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.exchange-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: var(--orange-dim);
+  border: 1px solid var(--glass-border-orange);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.7rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.exchange-card-body {
+  padding: 0 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.exchange-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.exchange-fee {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  border-top: 1px solid var(--glass-border);
+  padding-top: 0.75rem;
+  line-height: 1.6;
+}
+
+.exchange-fee span {
+  color: var(--orange);
+}
+
+.exchange-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--orange);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--orange-dim);
+  border: 1px solid var(--glass-border-orange);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.25rem;
+  min-height: 48px;
+  transition: background var(--transition-fast), gap var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.exchange-link:hover {
+  background: rgba(247, 147, 26, 0.18);
+  gap: 0.75rem;
+}
+
+/* Exchange accordion toggle */
+.exchange-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.75rem;
+  background: var(--surface);
+  border: none;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  min-height: 44px;
+}
+
+.exchange-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.exchange-toggle .toggle-icon {
+  font-size: 0.7rem;
+  transition: transform var(--transition-base);
+}
+
+.exchange-card.open .exchange-toggle .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.exchange-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.75rem;
+  border-top: 0px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.exchange-card.open .exchange-details {
+  max-height: 600px;
+  padding: 1.25rem 1.75rem 1.5rem;
+  border-top-width: 1px;
+}
+
+.exchange-details p {
+  font-size: 0.87rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.exchange-details p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Wallet Item Card ── */
+.wallet-item {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  transition: border-color var(--transition-base);
+}
+
+.wallet-item:hover {
+  border-color: var(--glass-border-orange);
+}
+
+.wallet-item h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.wallet-item p {
+  font-size: 0.83rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+.wallet-item a {
+  color: var(--orange);
+  font-size: 0.8rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.6rem;
+  min-height: 44px;
+  transition: opacity var(--transition-fast);
+}
+
+.wallet-item a:hover {
+  opacity: 0.8;
+}
+
+/* ── Multi-Sig Item ── */
+.multisig-item {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  transition: border-color var(--transition-base);
+}
+
+.multisig-item:hover {
+  border-color: var(--glass-border-orange);
+}
+
+.multisig-item h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.multisig-item p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.multisig-item a {
+  color: var(--orange);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.multisig-item a:hover {
+  opacity: 0.8;
+}
+
+/* ── Resource Item ── */
+.resource-item {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  display: block;
+  transition: border-color var(--transition-base), background var(--transition-base), transform var(--transition-base);
+  cursor: pointer;
+}
+
+.resource-item:hover {
+  border-color: var(--glass-border-orange);
+  background: var(--surface-hover);
+  transform: translateX(4px);
+}
+
+.resource-item.featured {
+  border-color: var(--glass-border-orange);
+  background: rgba(247, 147, 26, 0.04);
+}
+
+.resource-item strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0;
+}
+
+.resource-item span {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ── Scarcity Number Card ── */
+.scarcity-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-base);
+}
+
+.scarcity-card:hover {
+  border-color: var(--glass-border-orange);
+}
+
+.scarcity-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.scarcity-label {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.scarcity-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--orange);
+  letter-spacing: 0.05em;
+}
