@@ -116,9 +116,14 @@ function initThemeToggle() {
     btn.setAttribute('aria-checked', String(isLight));
   }
 
-  // Restore saved preference
+  // Restore saved preference; default to dark on first visit
   const saved = localStorage.getItem(STORAGE_KEY);
-  if (saved === 'light') root.setAttribute('data-theme', 'light');
+  if (saved === 'light') {
+    root.setAttribute('data-theme', 'light');
+  } else {
+    root.removeAttribute('data-theme'); // ensure dark
+    if (!saved) localStorage.setItem(STORAGE_KEY, 'dark'); // persist default
+  }
   syncAria();
 
   btn.addEventListener('click', () => {

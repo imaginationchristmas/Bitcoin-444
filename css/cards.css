@@ -285,7 +285,7 @@
 }
 
 .exchange-card.open .exchange-details {
-  max-height: 600px;
+  max-height: 1200px;
   padding: 1.25rem 1.75rem 1.5rem;
   border-top-width: 1px;
 }
@@ -315,7 +315,7 @@
 }
 
 .wallet-item h4 {
-  font-size: 1rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   margin-bottom: 0.3rem;
   color: var(--text);
@@ -357,7 +357,7 @@
 }
 
 .multisig-item h4 {
-  font-size: 1rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   margin-bottom: 0.3rem;
   color: var(--text);

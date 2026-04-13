@@ -37,6 +37,22 @@
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
+  /* Wallet tabs — 3 equal columns, all visible at once */
+  .wallet-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+
+  .wallet-tab {
+    padding: 0.6rem 0.5rem;
+    font-size: var(--text-xs);
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    min-height: 44px;
+  }
+
   /* 2-col grid: logo left, controls right */
   .nav-inner {
     grid-template-columns: auto auto;

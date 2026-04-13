@@ -41,8 +41,8 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-base);
-  line-height: 1.7;
+  font-size: var(--text-sm);
+  line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,9 +100,9 @@ h4 { font-size: var(--text-base); font-weight: 600; letter-spacing: 0.08em; }
 p {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--text-dim);
-  line-height: 1.75;
+  line-height: 1.6;
 }
 
 strong {
