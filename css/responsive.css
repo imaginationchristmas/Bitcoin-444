@@ -33,9 +33,15 @@
 
 /* ── Mobile (< 640px) ── */
 @media (max-width: 640px) {
-  /* Nav */
+  /* Nav — collapse links, keep controls visible */
   .nav-links { display: none; }
   .hamburger { display: flex; }
+
+  /* 2-col grid: logo left, controls right */
+  .nav-inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
 
   /* Grids → single column */
   .facts-grid,
@@ -77,8 +83,12 @@
     justify-content: center;
   }
 
+  /* Stats: switch to 2-column grid so the block is truly centered */
   .hero-stats {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    text-align: center;
   }
 
   /* Do's and Don'ts */
@@ -139,6 +149,11 @@
 @media (min-width: 641px) and (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
+
+  .nav-inner {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
 
   .facts-grid {
     grid-template-columns: repeat(2, 1fr);
